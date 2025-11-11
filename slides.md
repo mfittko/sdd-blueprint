@@ -45,7 +45,7 @@ LLMs have progressed from simple fact-finding to complex software engineering ta
 
 ::right::
 
-![LLM Capability Graph](./llm-capability-graph.png)
+![LLM Capability Graph](./public/images/llm-capability-graph.png)
 
 <div class="text-xs mt-2 opacity-75">
 
