@@ -1,0 +1,6 @@
+# SDD Blueprint .gitignore
+node_modules/
+dist/
+.env
+*.sqlite*
+coverage/
