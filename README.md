@@ -46,7 +46,7 @@ Every follow-up to the blueprint plan should move us closer to this outcome.
 
 ## Example Feature Overview
 
-The example implementation centres on a recipe catalogue inspired by *Grossmutters Rezepte*:
+The example implementation centres on a recipe catalogue demonstrating the SDD approach:
 
 - `src/lib/recipes/` – Domain service, validation schema, slug helper, and repository abstractions.
 - `src/api/recipes/route.ts` – API handlers that mirror Next.js-style route exports with clear error mapping.

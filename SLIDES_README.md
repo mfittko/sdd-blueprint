@@ -1,6 +1,6 @@
 # Slidev Presentation: From Idea to Production
 
-This presentation showcases the spec-driven development approach used in the **Großmutters Rezepte** project, demonstrating how GitHub Copilot and Model Context Protocol (MCP) were used to build a production-grade web application.
+This presentation showcases the spec-driven development approach demonstrated in this **SDD Blueprint** repository, explaining how GitHub Copilot and Model Context Protocol (MCP) enable production-grade web application development.
 
 ## Quick Start
 
@@ -41,7 +41,7 @@ Generates `slides-export.pdf` in the current directory.
 The presentation consists of **40+ slides** organized into the following sections:
 
 1. **Introduction** - The challenge and solution overview
-2. **Case Study** - Großmutters Rezepte project details
+2. **Case Study** - SDD Blueprint demonstration
 3. **Foundation** - AGENTS.md and documentation structure
 4. **GitHub Integration** - Issues, PRs, and MCP tools
 5. **Testing Strategy** - 90% coverage threshold and mock-first approach
@@ -188,4 +188,4 @@ Same as the main repository.
 
 ## Feedback
 
-Questions or suggestions? Open an issue on the [GitHub repository](https://github.com/mfittko/grossmutters-rezepte).
+Questions or suggestions? Open an issue on the [GitHub repository](https://github.com/mfittko/sdd-blueprint).
