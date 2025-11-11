@@ -15,8 +15,8 @@ This document walks through the complete lifecycle for blueprint work: from draf
 
 ## 2. Create a Branch
 
-1. Checkout the tracking branch (`feat/sdd-blueprint`).
-2. Create a feature branch named after the issue: `git checkout -b feat/sdd-blueprint/<short-slug>`.
+1. Checkout the tracking branch (`main`).
+2. Create a feature branch named after the issue: `git checkout -b main/<short-slug>`.
 3. Keep branches focused on a single spec.
 
 ## 3. Work Locally
@@ -34,7 +34,7 @@ This document walks through the complete lifecycle for blueprint work: from draf
 
 ## 4. Open the Pull Request
 
-1. Push the branch: `git push -u origin feat/sdd-blueprint/<short-slug>`.
+1. Push the branch: `git push -u origin main/<short-slug>`.
 2. Use `mcp_github_github_create_pull_request` to open the PR.
 3. Fill out every field in `.github/PULL_REQUEST_TEMPLATE.md`:
    - Link the spec issue (`Closes #<issue-number>`).
@@ -57,7 +57,7 @@ This document walks through the complete lifecycle for blueprint work: from draf
 
 ## 7. Post-Merge Housekeeping
 
-1. Pull the updated `feat/sdd-blueprint` branch locally.
+1. Pull the updated `main` branch locally.
 2. Delete the feature branch both locally and remotely.
 3. Capture any follow-up ideas as new issues rather than reopening merged PRs.
 

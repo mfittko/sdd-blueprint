@@ -1,6 +1,6 @@
 # Development Guide
 
-Use this guide for day-to-day work on the blueprint while it still lives inside the parent repository. Pair it with `docs/plan/B
+Use this guide for day-to-day work on this blueprint repository. See CHANGELOG.md for version history.
 LUEPRINT.md`, the Slidev alignment notes, and `docs/AGENTS.md`.
 
 ## Setup
@@ -16,7 +16,7 @@ ere is no database dependency; seed data loads into an in-memory repository.
 ## Project Structure
 
 ```
-docs/sdd-example/
+the blueprint
 ├── docs/           # Blueprint documentation and templates
 ├── src/            # Recipe feature source code
 ├── tests/          # Vitest + Playwright suites
@@ -48,7 +48,7 @@ Conventional commits document intent and scope. Real commits from this repositor
   - Captures the initial import of the blueprint skeleton and supporting docs/tests/config. The body enumerates each major addit
 ion so reviewers can skim the diff quickly.
 - `docs(blueprint): add development notes and branch strategy` (commit `06c015b`)
-  - Pure documentation change focused on process guidance. The body summarises why work stays on `feat/sdd-blueprint` and highli
+  - Pure documentation change focused on process guidance. The body summarises why work stays on `main` and highli
 ghts expectations for AI agents.
 
 When writing commit messages:

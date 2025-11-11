@@ -1,6 +1,6 @@
 # Spec-Driven Development (SDD) Blueprint
 
-This directory provides a blueprint repository for spec-driven, AI-powered software development. It is evolving into a self-cont
+This repository provides a blueprint repository for spec-driven, AI-powered software development. It is evolving into a self-cont
 ained package that can be copied into any TypeScript monorepo with microservices and front-end clients. The current drop include
 s a fully working recipe feature that demonstrates how to apply the Slidev playbook to real code while keeping the path open for
 additional services and UIs.
@@ -19,14 +19,14 @@ Use this as a starting point for new SDD projects or as a reference for best pra
 
 ## Development Status
 
-🚧 **Under Development**: This blueprint is currently being developed on the `feat/sdd-blueprint` branch within the parent reposi
+✅ **Standalone Repository**: This is a self-contained blueprint for spec-driven, AI-powered software development. Ready to use as a template for new projects.
 tory. It will remain here for iterative development and testing until ready for extraction to a standalone repository.
 
-See `../plan/BLUEPRINT.md` for the complete development plan and timeline.
+See GitHub releases for version history and roadmap.
 
 ## Output Target
 
-Our goal is to ship `docs/sdd-example/` as a **standalone SDD reference implementation**. When extracted it will provide:
+This blueprint provides:
 
 - Monorepo-friendly service modules that illustrate how to scale beyond the recipe slice.
 - A blueprint for wiring additional microservices through shared contracts and adapters.

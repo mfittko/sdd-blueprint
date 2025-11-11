@@ -5,7 +5,7 @@ This document explains how the blueprint example is wired together and why the i
 ## Layered layout
 
 ```
-docs/sdd-example/
+the blueprint
 ├── src/
 │   ├── api/recipes/route.ts        # Transport handlers that mirror Next.js route exports
 │   ├── data/recipes.ts             # Canonical seed data shared across tests and dev server

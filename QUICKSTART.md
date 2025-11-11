@@ -1,7 +1,7 @@
 # SDD Blueprint – Quick Start
 
 Use this guide to spin up the blueprint locally, explore the working recipe feature, and understand how to adapt it for your tea
-m. It assumes you plan to copy `docs/sdd-example/` into a standalone repository that hosts TypeScript microservices and related
+m. It assumes you plan to copy `.` into a standalone repository that hosts TypeScript microservices and related
 front-ends.
 
 ## What's Included
@@ -34,7 +34,7 @@ front-ends.
 - **CHANGELOG.md** – Keep-a-Changelog format capturing merged work.
 
 ### 🎯 Output Target
-- `docs/sdd-example/` should be copy-paste ready as its own repository root.
+- `.` should be copy-paste ready as its own repository root.
 - Service modules must demonstrate how to extend the recipe slice into additional microservices without rewriting the tooling.
 - Front-end consumers (Next.js app, component stories, or API clients) should stay aligned with the same specs and fixtures.
 - CI/CD and MCP workflows must run locally and in GitHub without requiring parent-repo configuration.
@@ -42,7 +42,7 @@ front-ends.
 ## Directory Structure
 
 ```
-docs/sdd-example/
+.
 ├── README.md
 ├── QUICKSTART.md
 ├── CHANGELOG.md

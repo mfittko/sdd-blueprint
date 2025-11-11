@@ -14,7 +14,7 @@ This guide translates the `slides.md` presentation into actionable principles fo
 | **Spec-Driven Framework** & **Atomic Commits & PR Workflow** | Mirror the staged setup (docs → templates → automation) in our folder layout and scripts. Demonstrate atomic commits, PR templates, and changelog expectations with real examples. |
 | **Test-Driven Quality** | Maintain ≥90% coverage expectations, real test suites, and explicit coverage reporting instructions. Encourage mutation testing or review heuristics where feasible. |
 | **Design Principles for AI-Driven Development** | Showcase SOLID, KISS, and typed boundaries in example code. Prefer explicit interfaces and dependency injection to make AI-generated code predictable. |
-| **Monorepo Architecture for AI Development** | Explain why the blueprint lives alongside the parent repo during development, how nested `AGENTS.md` files express local governance, and what must happen before `docs/sdd-example/` graduates into its own monorepo-ready repository. |
+| **Monorepo Architecture for AI Development** | Demonstrate how the blueprint serves as a monorepo-ready template, showing nested AGENTS.md files for service-specific governance. |
 | **CI/CD Pipeline** | Provide runnable workflows, coverage gates, and deployment placeholders that align with the pipeline diagram in the slides. |
 
 ## How to Apply the Slides While Building

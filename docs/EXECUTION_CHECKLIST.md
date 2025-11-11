@@ -16,7 +16,7 @@ INT.md`.
 
 - [x] Replace stub dependencies/scripts in `package.json` with runnable lint/test/build/coverage commands.
 - [x] Implement a complete example feature across `src/api`, `src/lib`, and `src/types` showcasing SOLID design.
-- [x] Add persistence adapters (mock in-memory repository mirroring parent repo injection patterns).
+- [x] Add persistence adapters (in-memory repository demonstrating adapter pattern).
 - [x] Write unit tests (`tests/unit/`) covering ≥90% statements/functions.
 - [x] Write integration tests (`tests/integration/`) exercising route handlers with synthetic `Request` objects.
 - [x] Ship Playwright E2E tests (`tests/e2e/`) proving the full workflow.
@@ -57,8 +57,8 @@ INT.md`.
 
 - [ ] Prepare migration checklist and dry-run extraction notes.
 - [ ] Create new repository, copy assets, and configure branch protection + automation.
-- [ ] Update documentation links/imports to remove parent repo references.
-- [ ] Confirm all scripts, assets, and configs resolve locally without depending on the parent repository.
+- [ ] Documentation updated for standalone repository.
+- [ ] All scripts, assets, and configs are self-contained.
 - [ ] Validate a fresh clone: install, lint, test, build, run Playwright, and inspect coverage artifacts.
 - [ ] Capture an AI-agent dry run (spec → implementation) proving independence.
 - [ ] Archive or document the legacy in-repo blueprint per branch strategy.
