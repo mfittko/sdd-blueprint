@@ -20,8 +20,6 @@ Use this as a starting point for new SDD projects or as a reference for best pra
 ## Development Status
 
 ✅ **Standalone Repository**: This is a self-contained blueprint for spec-driven, AI-powered software development. Ready to use as a template for new projects.
-tory. It will remain here for iterative development and testing until ready for extraction to a standalone repository.
-
 See GitHub releases for version history and roadmap.
 
 ## Output Target
