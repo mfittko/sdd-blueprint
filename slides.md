@@ -19,8 +19,8 @@ mdc: true
 Architecting and Building Production-Grade Web Applications using **GitHub Copilot + MCP**
 
 <div class="abs-br m-6 flex gap-2">
-  <a href="https://github.com/mfittko/grossmutters-rezepte" target="_blank" alt="GitHub"
-    class="text-xl slidev-icon-btn opacity-50 border-none!">
+  <a href="https://github.com/mfittko/sdd-blueprint" target="_blank" alt="GitHub"
+  class="text-xl slidev-icon-btn opacity-50 border-none!">
     <carbon-logo-github />
   </a>
 </div>
@@ -625,19 +625,10 @@ Enforce quality with measurable thresholds
 
 <div>
 
-### Coverage Metrics
-
-```yaml
-Current: 93% statements, 98% functions
-Threshold: 90% minimum
-
-Total: 175 tests
-- Unit: 140 tests
-- Integration: 28 tests
-- E2E: 3 tests
-```
-
 ### Coverage Policy
+
+
+✅ Consistent coverage target, e.g. 90%+
 
 ✅ Valid exclusions:
 - Platform-specific adapters
@@ -690,13 +681,13 @@ Total: 175 tests
 - Prefer simple over clever
 - Avoid meta-programming / excessive abstraction
 
-<div class="py-1 px-2 bg-yellow-50 dark:bg-yellow-900 rounded text-xs mb-2">
-**Note**: These are timeless software engineering best practices. With AI, they become **non-negotiable**.
-</div>
-
 </div>
 
 <div>
+
+<div class="py-1 px-2 bg-yellow-50 dark:bg-yellow-900 rounded text-xs mb-2">
+**Note**: These are timeless software engineering best practices. With AI, they become **non-negotiable**.
+</div>
 
 ### Why This Matters for AI
 
@@ -720,7 +711,7 @@ Total: 175 tests
 
 ---
 
-# Monorepo Architecture for AI Development
+# Monorepo Architecture for AI-driven Development
 
 **Even for microservices/micro-frontends, monorepos amplify AI effectiveness**
 
@@ -1070,7 +1061,7 @@ Result: 15 min, zero human help
 - Systematic, repetitive work
 - Background execution (async)
 - Multi-file changes
-- Can run browser automation (Playwright)
+- Can run tools/MCP if set up, has playwright out of the box
 
 </div>
 
@@ -1267,7 +1258,7 @@ flowchart TB
 // 1. Create branch
 mcp_github_create_branch({
   owner: "mfittko",
-  repo: "grossmutters-rezepte",
+  repo: "sdd-blueprint",
   branch: "feat/add-auth",
   from_branch: "main"
 })
@@ -1275,7 +1266,7 @@ mcp_github_create_branch({
 // 2. Create PR with template
 mcp_github_create_pull_request({
   owner: "mfittko",
-  repo: "grossmutters-rezepte",
+  repo: "sdd-blueprint",
   title: "[backend] Add OAuth authentication",
   head: "feat/add-auth",
   base: "main",
@@ -1400,40 +1391,105 @@ mcp_db_get_tables({
 
 <div>
 
-### Security & Trust
+### ⚠️ The Context Explosion Problem
 
-**1. Trusted sources only**
-- Official [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
-- Verified vendor implementations
-- Open-source with active maintenance
+**MCP's biggest flaw: Tool overhead**
 
-**2. Isolation strategies**
-- Run MCP servers in Docker containers
-- Use separate API tokens with minimal scopes
+Each server loads ALL its tools:
+- GitHub: 40+ tools
+- Browser: 20+ tools  
+- Figma: 15+ tools
 
-**3. Permission boundaries**
-- Read-only servers for documentation queries
-- Write access only when necessary
+**The cost:**
+- 5 servers = 500-2500 tokens
+- 10 servers = 1-5k tokens
+- **Before any code!**
 
 </div>
 
 <div>
 
-### Performance & Token Management
+### Mitigation Strategies
 
-**1. Minimize active servers**
-- 3-5 servers max per workflow
-- Each server adds 100-500 tokens to context
-- 10 servers = 1-5k tokens before any code
+**Be ruthlessly selective**
+- 3-5 servers max
+- Enable only what you need NOW
+- Disable after task
 
-**2. Monitor token usage**
-- Track MCP overhead in prompts
-- Disable unused servers
-- Use targeted queries (not broad searches)
+
+**Monitor token budget**
+- Track MCP overhead
+- Use targeted queries
+- Check LLM caching efficiency
 
 </div>
 
 </div>
+
+<v-click>
+<div class="mt-2 py-1 px-2 bg-red-50 dark:bg-red-900 rounded text-xs">
+
+**The Tradeoff**: More servers = more capabilities but less code context. Choose wisely.
+
+</div>
+</v-click>
+
+</div>
+
+---
+
+# MCP Security & Trust
+
+**Safe MCP usage essentials**
+
+<div style="font-size: 0.85em;">
+
+<div class="grid grid-cols-2 gap-4">
+
+<div>
+
+### Security Practices
+
+**Trusted sources only**
+- Official [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+- Verified vendor implementations
+- Open-source with active maintenance
+
+**Isolation & permissions**
+- Run servers in Docker containers
+- Scoped API tokens (minimal access)
+- Read-only where possible
+- Never use production credentials
+
+</div>
+
+<div>
+
+### Practical Security
+
+**Audit capabilities**
+- Review server permissions
+- Disable unnecessary tools
+
+**Scoped tokens**
+- GitHub: Repo-specific only
+- Database: Read-only
+- Filesystem: Project dir only
+
+
+</div>
+
+</div>
+
+<v-click>
+
+<div class="mt-2 py-1 px-2 bg-yellow-50 dark:bg-yellow-900 rounded text-xs">
+
+**Remember**: MCP servers have real power. Treat them like any API with write access.
+
+</div>
+
+</v-click>
 
 </div>
 
@@ -1493,122 +1549,6 @@ mcp_db_get_tables({
 </div>
 
 </div>
-
----
-
-# MCP Real-World Impact
-
-**Measurable improvements from using MCP in this project**
-
-<div style="font-size: 0.85em;">
-
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-
-**GitHub Operations** (per PR)
-- Manual: 8-12 min (create branch, PR form, link issues)
-- MCP: 30 sec (automated via tools)
-- **Savings**: 90% time reduction
-
-**Documentation Queries** (per lookup)
-- Manual: 5-10 min (search docs, verify version)
-- Context7 MCP: 10 sec (instant, current)
-- **Savings**: 95% time reduction
-
-**E2E Test Generation**
-- Manual: 30-60 min (write selectors, assertions)
-- Browser MCP: 5-10 min (observe + generate)
-- **Savings**: 85% time reduction
-
-</div>
-
-<div>
-
-
-**Consistency**
-- PRs follow template 100% (vs. 60% manual)
-- Commit messages standard (conventional commits)
-- Issue linking never forgotten
-
-**Accuracy**
-- Zero wrong branch merges
-- Always latest documentation patterns, correct versions
-
-**Traceability**
-- All operations logged in CI
-- Audit trail for compliance
-- Reproducible workflows
-
-</div>
-
-</div>
-
-<v-click>
-
-</v-click>
-
-</div>
-
----
-layout: two-cols
-layoutClass: gap-8
----
-
-# MCP + AGENTS.md Synergy
-
-**Why they work better together**
-
-<div style="font-size: 0.85em;">
-
-### AGENTS.md Enforces Standards
-
-```markdown
-## GitHub operations
-- ALWAYS use MCP tools for PRs
-- Use mcp_github_create_pull_request
-- Never create PRs manually
-
-## Commit guidelines
-- Format: type(scope): description
-- Use mcp_github_push_files
-- Atomic commits only
-```
-
-AI reads this → Uses MCP correctly
-
-</div>
-
-::right::
-
-<div style="font-size: 0.85em;" class="mt-8">
-
-### MCP Executes Standards
-
-Without AGENTS.md:
-```typescript
-// AI might try manual git commands
-run_in_terminal({
-  command: "git push && gh pr create"
-})
-```
-
-With AGENTS.md + MCP:
-```typescript
-// AI uses structured, traceable MCP calls
-mcp_github_push_files({ ... })
-mcp_github_create_pull_request({ ... })
-```
-
-<div class="py-1 px-2 bg-purple-50 dark:bg-purple-900 rounded text-xs mt-2">
-
-**Result**: Standards documented once, enforced automatically, executed reliably
-
-</div>
-
-</div>
-
 
 ---
 
@@ -1732,7 +1672,7 @@ layoutClass: gap-12
 
 # The Example Project
 
-**Großmutters Rezepte - Real-world spec-driven development**
+**SDD Blueprint - Real-world spec-driven development**
 
 <div style="font-size: 0.9em;">
 
@@ -1740,15 +1680,15 @@ layoutClass: gap-12
 
 ### What You'll Find
 
-■ **6 merged PRs** showing the complete workflow from specs to production
+■ **Complete working example** showing the workflow from specs to production
 
-■ **18 open issues** demonstrating planning and task breakdown
-
-■ **Comprehensive docs/** - Architecture, testing, security patterns
+■ **Comprehensive docs/** - Architecture, testing, development patterns
 
 ■ **Working CI pipeline** - Automated quality gates
 
-■ **2-day build** from zero to working POC
+■ **Recipe service implementation** - Demonstrates clean architecture and testing
+
+■ **Slidev presentation** - Explains the methodology and patterns
 
 </div>
 
@@ -1778,10 +1718,10 @@ layoutClass: gap-12
 
 ### Start Here
 
-1. Clone: `git clone github.com/mfittko/grossmutters-rezepte`
-2. Read AGENTS.md to understand the standards
-3. Browse merged PRs to see the workflow in action
-4. Study open issues for spec examples
+1. Clone: `git clone github.com/mfittko/sdd-blueprint`
+2. Read QUICKSTART.md for setup instructions
+3. Read AGENTS.md to understand the standards
+4. Study the example recipe service implementation
 
 </div>
 
@@ -1803,7 +1743,7 @@ Questions?
 </div>
 
 <div class="mt-8 flex gap-4 justify-center">
-  <a href="https://github.com/mfittko/grossmutters-rezepte" target="_blank" class="text-xl">
+  <a href="https://github.com/mfittko/sdd-blueprint" target="_blank" class="text-xl">
     <carbon-logo-github /> GitHub Repository
   </a>
 </div>
