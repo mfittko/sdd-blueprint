@@ -101,12 +101,6 @@ timeline
 
 <div style="font-size: 0.85em;">
 
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-### The "Vibe-Coding" Approach
-
 ```
 Developer: "Build me a login system"
 
@@ -125,95 +119,54 @@ Developer: "Add rate limiting"
 AI: *generates conflicting implementation*
 ```
 
-**Result**: Hours of back-and-forth, inconsistent code, technical debt
-
 </div>
 
-<div>
+<!--
+Why "Vibe-Coding" Fails:
+- No shared context - AI doesn't know your standards
+- Assumption overload - AI fills gaps with guesses
+- State loss - Each prompt starts semi-fresh
+- No quality gates - Anything goes
+- Prompt whack-a-mole - Fix one thing, break another
+- Copy-paste fatigue - Manually applying generated code
 
-### Why It Fails
-
-❌ **No shared context** - AI doesn't know your standards
-
-❌ **Assumption overload** - AI fills gaps with guesses
-
-❌ **State loss** - Each prompt starts semi-fresh
-
-❌ **No quality gates** - Anything goes
-
-❌ **Prompt whack-a-mole** - Fix one thing, break another
-
-❌ **Copy-paste fatigue** - Manually applying generated code
-
-<div class="py-1 px-2 bg-red-50 dark:bg-red-900 rounded text-xs mt-4">
-
-**The chaos**: Vibe-coding feels fast initially, but compounds into unmaintainable systems
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
----
-layout: two-cols
-layoutClass: gap-8
----
+The chaos: Vibe-coding feels fast initially, but compounds into unmaintainable systems. Hours of back-and-forth, inconsistent code, technical debt.
+-->
 
 # The Spec-Driven Solution
 
 **Bringing structure back—with AI superpowers**
 
-<div style="font-size: 0.85em;">
-
-### The Power Inversion
-
-**Pre-AI**: Specs documented intent, developers interpreted
-
-**AI Era**: Specs are executable, AI implements
-
-<div class="py-1 px-2 bg-blue-50 dark:bg-blue-900 rounded text-xs mt-2">
-
-The game-changer: Specifications **generate** code, not just guide it. No interpretation gap.
-
-</div>
-
-### Various evolving Frameworks, 1 goal!
-
-**GitHub Spec Kit** - Constitutional governance with templates
-**Agent OS** - 3-layer context system (Standards/Product/Specs)
-**AI Dev Tasks** - Lightweight PRD → Tasks workflow
-**This Talk** - Practical implementation with real-world results
-
-</div>
-
-::right::
-
-<div style="font-size: 0.85em;" class="mt-8">
-
-### Common Principles Across All
+<div style="font-size: 0.9em;">
 
 ✅ **Specifications First** - Define before implementing
 
 ✅ **Break Down Complexity** - Tasks over monoliths
 
-✅ **Iterative Checkpoints** - Review each step
-
 ✅ **Quality Gates** - Enforce standards automatically
-
-✅ **Living Documentation** - Specs evolve with code
 
 ✅ **AI as Executor** - Not creative coder, but disciplined engineer
 
-<div class="py-1 px-2 bg-green-50 dark:bg-green-900 rounded text-xs mt-4">
-
-**Sources**: [GitHub Spec Kit](https://github.com/github/spec-kit) • [Agent OS](https://buildermethods.com/agent-os) • [AI Dev Tasks](https://github.com/snarktank/ai-dev-tasks)
-
 </div>
 
-</div>
+<!--
+The Power Inversion:
+- Pre-AI: Specs documented intent, developers interpreted
+- AI Era: Specs are executable, AI implements
+- The game-changer: Specifications GENERATE code, not just guide it. No interpretation gap.
+
+Various evolving Frameworks, 1 goal:
+- GitHub Spec Kit - Constitutional governance with templates
+- Agent OS - 3-layer context system (Standards/Product/Specs)
+- AI Dev Tasks - Lightweight PRD → Tasks workflow
+- This Talk - Practical implementation with real-world results
+
+Additional Common Principles:
+- Iterative Checkpoints - Review each step
+- Living Documentation - Specs evolve with code
+
+Sources: GitHub Spec Kit (https://github.com/github/spec-kit) • Agent OS (https://buildermethods.com/agent-os) • AI Dev Tasks (https://github.com/snarktank/ai-dev-tasks)
+-->
 
 ---
 
@@ -242,12 +195,6 @@ AI assumes:
 Result: Plausible but wrong
 ```
 
-<div class="py-1 px-2 bg-red-50 dark:bg-red-900 rounded text-xs mt-2">
-
-AI fills gaps with assumptions, drifting from your standards
-
-</div>
-
 </div>
 
 <div>
@@ -268,23 +215,19 @@ AGENTS.md enforces:
 - MCP tools for GitHub ops
 ```
 
-<div class="py-1 px-2 bg-green-50 dark:bg-green-900 rounded text-xs mt-2">
-
-Explicit specs + enforced standards/guardrails = predictable quality
-
 </div>
 
 </div>
 
 </div>
 
-<div class="mt-3 py-1.5 px-2.5 bg-purple-50 dark:bg-purple-900 rounded" style="font-size: 0.8em; line-height: 1.3;">
-
-AI must satisfy precise acceptance criteria that are properly thought through, not just vague prompts.
-
-</div>
-
-</div>
+<!--
+Key Points:
+- AI fills gaps with assumptions when not constrained, drifting from your standards
+- Explicit specs + enforced standards/guardrails = predictable quality
+- AI must satisfy precise acceptance criteria that are properly thought through, not just vague prompts
+- This is how you constrain AI to build the right thing, not just something plausible
+-->
 
 ---
 
@@ -481,12 +424,6 @@ Iterate forever: Sub-issues enable parallel work. Quality gates ensure nothing b
 </div>
 
 ---
-
-# Building Blocks of the Framework
-
-The essential components that make it work
-
----
 layout: two-cols
 layoutClass: gap-8
 ---
@@ -611,12 +548,6 @@ Issues are living specs. AI reads → implements → checks off. Update as you i
 
 ---
 
-# Implementation Patterns
-
-Technical patterns that enable the framework
-
----
-
 # Test-Driven Quality
 
 Enforce quality with measurable thresholds
@@ -662,66 +593,46 @@ Enforce quality with measurable thresholds
 
 **SOLID, KISS, and static typing enable AI to build correctly**
 
-<div style="font-size: 0.78em;">
+<div style="font-size: 0.85em;">
 
-<div class="grid grid-cols-2 gap-4">
+### SOLID Principles
+- **S**ingle Responsibility
+- **O**pen/Closed
+- **L**iskov Substitution
+- **I**nterface Segregation
+- **D**ependency Inversion
 
-<div>
-
-### Core Principles
-
-**SOLID Principles**
-- **S**ingle Responsibility - Clear, focused modules
-- **O**pen/Closed - Extend without modifying
-- **L**iskov Substitution - Interface contracts
-- **I**nterface Segregation - Specific interfaces
-- **D**ependency Inversion - Depend on abstractions
-
-**KISS (Keep It Simple, Stupid)**
+### KISS (Keep It Simple, Stupid)
 - Prefer simple over clever
-- Avoid meta-programming / excessive abstraction
+- Avoid meta-programming
 
 </div>
 
-<div>
+<!--
+Why These Principles Matter for AI:
 
-<div class="py-1 px-2 bg-yellow-50 dark:bg-yellow-900 rounded text-xs mb-2">
-**Note**: These are timeless software engineering best practices. With AI, they become **non-negotiable**.
-</div>
+✅ Clear Boundaries - AI knows where responsibilities end
+✅ Predictable Patterns - Consistent structure = faster learning
+✅ Easier Reasoning - Simple code = fewer wrong assumptions
+✅ Better Test Generation - Focused modules → targeted tests
+✅ Safer Refactoring - Well-defined interfaces enable confident changes
+✅ Explicit > Implicit - AI struggles with magic and conventions
 
-### Why This Matters for AI
+Note: These are timeless software engineering best practices. With AI, they become NON-NEGOTIABLE.
 
-✅ **Clear Boundaries** - AI knows where responsibilities end
-
-✅ **Predictable Patterns** - Consistent structure = faster learning
-
-✅ **Easier Reasoning** - Simple code = fewer wrong assumptions
-
-✅ **Better Test Generation** - Focused modules → targeted tests
-
-✅ **Safer Refactoring** - Well-defined interfaces enable confident changes
-
-✅ **Explicit > Implicit** - AI struggles with magic and conventions
-
-</div>
-
-</div>
-
-</div>
+SOLID Details:
+- Single Responsibility - Clear, focused modules
+- Open/Closed - Extend without modifying
+- Liskov Substitution - Interface contracts
+- Interface Segregation - Specific interfaces
+- Dependency Inversion - Depend on abstractions
+-->
 
 ---
 
 # Monorepo Architecture for AI-driven Development
 
-**Even for microservices/micro-frontends, monorepos amplify AI effectiveness**
-
-<div style="font-size: 0.85em;">
-
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-### Structure Example
+**Monorepos amplify AI effectiveness**
 
 ```
 monorepo/
@@ -739,43 +650,23 @@ monorepo/
 └── .github/               # Unified CI/CD
 ```
 
-<div class="py-1 px-2 bg-blue-50 dark:bg-blue-900 rounded text-xs mt-2">
+<!--
+Why Monorepos Work Better with AI:
 
-**AI Benefits**: Navigate dependencies, propagate changes, verify compatibility—all without leaving context.
+✅ Single Context Window - AI sees entire codebase at once
+✅ Shared Standards - One AGENTS.md for all services
+✅ Nested documentation - Extend with specific rules/details
+✅ Cross-Service Refactoring - Single change interface
+✅ Coordinated PRs - Track related changes across services
+✅ Unified Testing - Run all tests, verify integrations
+✅ Dependency Management - Track versions across services
 
-</div>
+AI Benefits: Navigate dependencies, propagate changes, verify compatibility—all without leaving context.
 
-</div>
+Polyrepo Problem: AI loses context switching between repos. Must re-learn standards, can't verify cross-service changes, breaks on interface updates.
 
-<div>
-
-### Why Monorepos Work Better with AI
-
-✅ **Single Context Window** - AI sees entire codebase at once
-
-✅ **Shared Standards** - One AGENTS.md for all services
-
-✅ **Nested documentation** - Extend with specific rules/details
-
-✅ **Cross-Service Refactoring** - Single change interface
-
-✅ **Coordinated PRs** - Track related changes across services
-
-✅ **Unified Testing** - Run all tests, verify integrations
-
-✅ **Dependency Management** - Track versions across services
-
-<div class="mt-2 py-1 px-2 bg-purple-50 dark:bg-purple-900 rounded text-xs">
-
-**Polyrepo Problem**: AI loses context switching between repos. Must re-learn standards, can't verify cross-service changes, breaks on interface updates.
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+Even for microservices/micro-frontends, monorepos are ideal for AI-driven development.
+-->
 
 ---
 
@@ -975,65 +866,32 @@ All checks must pass before merge. No exceptions.
 
 **Common pitfalls and how to fix them**
 
-<div style="font-size: 0.85em;">
+<div style="font-size: 0.9em;">
 
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-### Documentation & Quality
-
-❌ **Documentation Divergence**
-Don't maintain parallel docs.
-Fix: One source of truth (GitHub Issues).
-
-❌ **Lowering Thresholds**
-Never lower coverage to merge faster.
+❌ **Lowering Thresholds** - Never lower coverage to merge faster  
 Fix: Add tests. Bar doesn't move down.
 
-❌ **Vague Specifications**
-Don't write "Add feature X".
-Fix: Acceptance criteria AI can check off.
-
-❌ **Skipping CHANGELOG**
-Don't defer documentation.
-Fix: Update with every PR.
-
-</div>
-
-<div>
-
-### Process & Automation
-
-❌ **Bulk Commits**
-Avoid `git add .` with vague messages.
+❌ **Bulk Commits** - Avoid `git add .` with vague messages  
 Fix: Review each file, commit logically.
 
-❌ **Manual GitHub Operations**
-Don't create PRs manually.
-Fix: Use MCP tools for consistency.
-
-❌ **Excluding Important Files**
-Don't exclude core logic.
-Fix: Only platform-specific code excluded.
+❌ **Vague Specifications** - Don't write "Add feature X"  
+Fix: Acceptance criteria AI can check off.
 
 </div>
 
-</div>
+<!--
+Additional Anti-Patterns to Avoid:
 
-<div class="py-1 px-2 bg-red-50 dark:bg-red-900 rounded text-sm">
+Documentation & Quality:
+- Documentation Divergence: Don't maintain parallel docs. Fix: One source of truth (GitHub Issues).
+- Skipping CHANGELOG: Don't defer documentation. Fix: Update with every PR.
 
-Shortcuts save 5min now, cost hours later.
+Process & Automation:
+- Manual GitHub Operations: Don't create PRs manually. Fix: Use MCP tools for consistency.
+- Excluding Important Files: Don't exclude core logic. Fix: Only platform-specific code excluded.
 
-</div>
-
-</div>
-
----
-
-# Reference: Tools & Patterns
-
-Additional resources for advanced usage
+Remember: Shortcuts save 5min now, cost hours later.
+-->
 
 ---
 
@@ -1381,19 +1239,11 @@ mcp_db_get_tables({
 
 ---
 
-# MCP Best Practices
-
-**How to use MCP effectively without shooting yourself in the foot**
-
-<div style="font-size: 0.85em;">
-
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-### ⚠️ The Context Explosion Problem
+# MCP Best Practices: Context Explosion Problem
 
 **MCP's biggest flaw: Tool overhead**
+
+<div style="font-size: 0.9em;">
 
 Each server loads ALL its tools:
 - GitHub: 40+ tools
@@ -1407,15 +1257,27 @@ Each server loads ALL its tools:
 
 </div>
 
-<div>
+<!--
+The Context Explosion Problem:
+MCP servers load all their tools into the AI's context, consuming tokens before you write any code. This is MCP's biggest limitation - tool definitions take up valuable context space that could be used for your code.
 
-### Mitigation Strategies
+Example: A typical GitHub server exposes 40+ tools (create PR, create issue, list commits, get file contents, etc.). Even if you only need 2-3 tools, all 40 are loaded into context.
+
+The impact scales with the number of servers you enable. This is why selective server usage is critical for maintaining enough context for your actual code.
+-->
+
+---
+
+# MCP Best Practices: Mitigation Strategies
+
+**How to use MCP effectively without shooting yourself in the foot**
+
+<div style="font-size: 0.9em;">
 
 **Be ruthlessly selective**
 - 3-5 servers max
 - Enable only what you need NOW
 - Disable after task
-
 
 **Monitor token budget**
 - Track MCP overhead
@@ -1424,17 +1286,28 @@ Each server loads ALL its tools:
 
 </div>
 
-</div>
+<!--
+Best Practices for MCP Usage:
 
-<v-click>
-<div class="mt-2 py-1 px-2 bg-red-50 dark:bg-red-900 rounded text-xs">
+Be ruthlessly selective:
+- Only enable servers you need for the current task
+- Start with 3-5 servers maximum
+- Disable servers after completing the task
+- Don't enable "just in case" - add servers when you need them
 
-**The Tradeoff**: More servers = more capabilities but less code context. Choose wisely.
+Monitor token budget:
+- Keep track of how many tokens MCP tools consume
+- Use targeted, specific queries instead of broad searches
+- Check if your LLM provider supports caching (can reduce overhead on repeated tool definitions)
+- Consider the tradeoff: more servers = more capabilities but less context for code
 
-</div>
-</v-click>
+The Tradeoff: More servers = more capabilities but less code context. Choose wisely.
 
-</div>
+Additional Tips:
+- Use MCP servers strategically - they're powerful but have costs
+- For simple file operations, consider using direct file tools instead of filesystem server
+- Combine tools efficiently - one GitHub search is better than many individual queries
+-->
 
 ---
 
@@ -1495,52 +1368,22 @@ Each server loads ALL its tools:
 
 ---
 
-# MCP Ecosystem: Official Servers (Part 1)
+# MCP Ecosystem: Official Servers
 
-**Reference servers demonstrating MCP features**
+**Key servers for AI-driven development**
 
-<div style="font-size: 0.72em;">
+<div style="font-size: 0.68em;">
 
-| Server | Purpose | Key Capabilities | Use Case |
-|--------|---------|------------------|----------|
-| **GitHub** | Repository operations | Create PRs, issues, branches, push files, search code | Automate Git workflow |
-| **GitLab** | GitLab integration | OAuth 2.0 auth, project data, issue management, repo operations | GitLab workflow automation |
-| **Playwright** | Browser automation | Navigate, click, type, screenshot, assertions | E2E test generation |
-| **Context7** | Live documentation | Query official docs, up-to-date examples | Current framework patterns |
-| **Figma** | Design access | Read designs, extract tokens, export assets | Design-to-code workflow |
-| **Filesystem** | Local file ops | Read/write files with access controls | Safe file operations |
-| **Git** | Git operations | Read, search, manipulate repositories | Version control automation |
-
-<div class="mt-2 py-1 px-2 bg-blue-50 dark:bg-blue-900 rounded text-xs">
-
-**Official MCP Servers**: Maintained by the MCP team and vendors. Production-ready with full support.
-
-</div>
-
-</div>
-
----
-
-# MCP Ecosystem: Official Servers (Part 2)
-
-**Additional example servers and community implementations**
-
-<div style="font-size: 0.72em;">
-
-| Server | Purpose | Key Capabilities | Use Case |
-|--------|---------|------------------|----------|
-| **Postgres** | Database operations | Query schema, execute SQL, migrations | Database automation |
-| **Brave Search** | Web search | Search the web, get current results | Real-time information |
-| **Slack** | Team communication | Send messages, read channels, manage threads | Team automation |
-| **Linear** | Issue tracking | Create/update issues, manage projects | Project management |
-| **Shortcut** | Agile planning | Stories, epics, iterations management | Sprint planning |
-| **Chrome DevTools** | Browser debugging | Debug websites, performance traces, DOM/CSS inspection, network analysis | Real-time debugging & verification |
-
-<div class="mt-2 py-1 px-2 bg-green-50 dark:bg-green-900 rounded text-xs">
-
-**Community Servers**: Built by the community, following MCP standards. Check compatibility before production use.
-
-</div>
+| Server | Purpose | Key Capabilities |
+|--------|---------|------------------|
+| **GitHub** | Repository operations | Create PRs, issues, branches, search code |
+| **Playwright** | Browser automation | Navigate, click, type, screenshot, assertions |
+| **Context7** | Live documentation | Query official docs, up-to-date examples |
+| **Figma** | Design access | Read designs, extract tokens, export assets |
+| **Postgres** | Database operations | Query schema, execute SQL, migrations |
+| **GitLab** | GitLab integration | OAuth 2.0 auth, project data, issue management |
+| **Filesystem** | Local file ops | Read/write files with access controls |
+| **Git** | Git operations | Read, search, manipulate repositories |
 
 <div class="mt-2 py-1 px-2 bg-blue-50 dark:bg-blue-900 rounded text-xs">
 
@@ -1550,54 +1393,63 @@ Each server loads ALL its tools:
 
 </div>
 
+<!--
+Additional MCP Servers (for reference):
+- **Brave Search**: Web search with current results
+- **Slack**: Team communication - send messages, read channels, manage threads
+- **Linear**: Issue tracking - create/update issues, manage projects
+- **Shortcut**: Agile planning - stories, epics, iterations management
+- **Chrome DevTools**: Browser debugging - performance traces, DOM/CSS inspection, network analysis
+
+Official MCP Servers are maintained by the MCP team and vendors, production-ready with full support.
+Community Servers are built by the community following MCP standards - check compatibility before production use.
+-->
+
 ---
 
 # AI Development Tools
 
 **Essential tools for spec-driven development with AI**
 
-<div class="grid grid-cols-2 gap-4" style="font-size: 0.85em;">
+<div style="font-size: 0.95em;">
 
-<div>
-
-### AI & Automation
-- **GitHub Copilot** - AI pair programmer with chat & inline suggestions
-- **MCP Servers** - Context protocol for GitHub, Figma, Browser, Docs
-- **GitHub Actions** - CI/CD pipeline for automated quality gates
-
-### Testing & Quality
-- **Vitest** - Fast unit tests with coverage reporting (≥90%)
-- **Playwright** - E2E testing with browser automation
-- **TypeScript** - Static typing (strict mode required)
-- **ESLint** - Code linting with auto-fix
+- **GitHub Copilot** - AI pair programmer
+- **MCP Servers** - GitHub, Figma, Browser, Docs
+- **Vitest** - Unit tests (≥90% coverage)
+- **Playwright** - E2E testing
+- **TypeScript** - Static typing (strict mode)
+- **ESLint** - Code linting
 
 </div>
 
-<div>
+<!--
+AI & Automation:
+- GitHub Copilot: AI pair programmer with chat & inline suggestions
+- MCP Servers: Context protocol for GitHub, Figma, Browser, Docs
+- GitHub Actions: CI/CD pipeline for automated quality gates
 
-### Why These Tools?
+Testing & Quality:
+- Vitest: Fast unit tests with coverage reporting (≥90%)
+- Playwright: E2E testing with browser automation
+- TypeScript: Static typing (strict mode required)
+- ESLint: Code linting with auto-fix
 
-**GitHub Copilot + MCP**
+Why These Tools?
+
+GitHub Copilot + MCP:
 - AI has context via MCP (GitHub, docs, browser)
 - Automates Git operations consistently
 - Reduces manual context switching
 
-**Testing Stack**
+Testing Stack:
 - Vitest: Fast, built-in coverage
 - Playwright: MCP integration for test generation
 - TypeScript: AI guardrails via types
 
-**Result**: AI generates better code with proper tooling
+Result: AI generates better code with proper tooling
 
-<div class="py-1 px-2 bg-blue-50 dark:bg-blue-900 rounded text-xs mt-3">
-
-**Start simple**: Copilot + Vitest + GitHub Actions. Add Playwright and MCP servers as needed.
-
-</div>
-
-</div>
-
-</div>
+Start simple: Copilot + Vitest + GitHub Actions. Add Playwright and MCP servers as needed.
+-->
 
 ---
 layout: two-cols
@@ -1608,124 +1460,84 @@ layoutClass: gap-12
 
 **Proven standards that enable AI-driven development**
 
-<div style="font-size: 0.9em;">
+<div style="font-size: 0.95em;">
 
-<div>
+**AGENTS.md** → [agents.md](https://agents.md/)
 
-### Documentation Standards
+**Keep a Changelog** → [keepachangelog.com](https://keepachangelog.com/)
 
-**AGENTS.md** - AI agent instructions standard  
-→ [agents.md](https://agents.md/) • 20k+ repos
+**Conventional Commits** → [conventionalcommits.org](https://www.conventionalcommits.org/)
 
-**Keep a Changelog** - Structured change logs  
-→ [keepachangelog.com](https://keepachangelog.com/)
-
-**GitHub Issues** - Issues as executable specs  
-→ [docs.github.com/issues](https://docs.github.com/en/issues)
-
-### Development Standards
-
-**Conventional Commits** - Semantic commit messages  
-→ [conventionalcommits.org](https://www.conventionalcommits.org/)
-
-**GitHub Spec Kit** - Spec-driven development guide  
-→ [github.com/github/spec-kit](https://github.com/github/spec-kit)
-
-</div>
+**GitHub Spec Kit** → [github.com/github/spec-kit](https://github.com/github/spec-kit)
 
 </div>
 
 ::right::
 
-<div style="font-size: 0.85em;" class="mt-8">
+<div style="font-size: 0.9em;" class="mt-8">
 
-<div>
+**Model Context Protocol** → [modelcontextprotocol.io](https://modelcontextprotocol.io/)
 
-### Key Resources
+**MCP Servers** → [github.com/modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
 
-**Model Context Protocol**  
-→ [modelcontextprotocol.io](https://modelcontextprotocol.io/)
-
-**MCP Server Registry**  
-→ [github.com/modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
-
-**Context7 (Live Docs)**  
-→ Query official docs in real-time
-
-**Playwright Documentation**  
-→ [playwright.dev](https://playwright.dev/)
-
-<div class="py-1 px-2 bg-purple-50 dark:bg-purple-900 rounded text-xs mt-4">
-
-**Why standards matter**: They constrain AI to build correctly. AGENTS.md + Conventional Commits + Issue templates = predictable quality.
+**Playwright** → [playwright.dev](https://playwright.dev/)
 
 </div>
 
-</div>
+<!--
+Community Standards Details:
 
-</div>
+Documentation Standards:
+- AGENTS.md: AI agent instructions standard (20k+ repos)
+- Keep a Changelog: Structured change logs
+- GitHub Issues: Issues as executable specs
 
----
-layout: two-cols
-layoutClass: gap-12
----
+Development Standards:
+- Conventional Commits: Semantic commit messages
+- GitHub Spec Kit: Spec-driven development guide
+
+Key Resources:
+- Model Context Protocol: Connect AI to external tools
+- MCP Server Registry: Official and community servers
+- Context7 (Live Docs): Query official docs in real-time
+- Playwright Documentation: Browser automation
+
+Why standards matter: They constrain AI to build correctly. AGENTS.md + Conventional Commits + Issue templates = predictable quality.
+-->
 
 # The Example Project
 
 **SDD Blueprint - Real-world spec-driven development**
 
-<div style="font-size: 0.9em;">
+<div style="font-size: 0.95em;">
 
-<div>
-
-### What You'll Find
-
-■ **Complete working example** showing the workflow from specs to production
-
-■ **Comprehensive docs/** - Architecture, testing, development patterns
-
-■ **Working CI pipeline** - Automated quality gates
-
-■ **Recipe service implementation** - Demonstrates clean architecture and testing
-
-■ **Slidev presentation** - Explains the methodology and patterns
+- Complete working example from specs to production
+- Working CI pipeline with quality gates
+- Recipe service demonstrating clean architecture
 
 </div>
 
-</div>
+<!--
+What You'll Find:
+■ Complete working example showing the workflow from specs to production
+■ Comprehensive docs/ - Architecture, testing, development patterns
+■ Working CI pipeline - Automated quality gates
+■ Recipe service implementation - Demonstrates clean architecture and testing
+■ Slidev presentation - Explains the methodology and patterns
 
-::right::
+Files Worth Reading:
+■ AGENTS.md - Complete agent guide (setup, style, testing, commits)
+■ .github/pull_request_template.md - PR checklist and quality gates
+■ docs/ARCHITECTURE.md - System design and patterns
+■ docs/TESTING.md - Test strategy and coverage policy
+■ docs/API.md - API reference and route handlers
 
-<div style="font-size: 0.85em;" class="mt-8">
-
-<div>
-
-### Files Worth Reading
-
-■ `AGENTS.md` - Complete agent guide (setup, style, testing, commits)
-
-■ `.github/pull_request_template.md` - PR checklist and quality gates
-
-■ `docs/ARCHITECTURE.md` - System design and patterns
-
-■ `docs/TESTING.md` - Test strategy and coverage policy
-
-■ `docs/API.md` - API reference and route handlers
-
-</div>
-
-<div>
-
-### Start Here
-
-1. Clone: `git clone github.com/mfittko/sdd-blueprint`
+Start Here:
+1. Clone: git clone github.com/mfittko/sdd-blueprint
 2. Read QUICKSTART.md for setup instructions
 3. Read AGENTS.md to understand the standards
 4. Study the example recipe service implementation
-
-</div>
-
-</div>
+-->
 
 ---
 layout: center
